@@ -1,26 +1,31 @@
-# This example requires the 'message_content' privileged intents
-
-import os
 import discord
+import os
 from discord.ext import commands
 
+CHANNEL_ID=1064875419184148490
+client = discord.Client(intents=discord.Intents.all())
 
-intents = discord.Intents.default()
-intents.message_content = True
-bot = commands.Bot(command_prefix='!', intents=intents)
-
-
-@bot.event
+@client.event
 async def on_ready():
-    print(f"Logged in as {bot.user}")
+    # 起動したらターミナルにログイン通知が表示される
+    print('ログインしました')
+    await greet()
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
-@bot.command()
-async def hello(ctx):
-    await ctx.send("Choo choo! 🚅")
+async def greet():
+    channel = client.get_channel(CHANNEL_ID)
+    await channel.send('我が名はmkdk･･･起動完了')
 
 
-bot.run(os.environ["DISCORD_TOKEN"])
+@client.event
+async def on_message(message):
+    # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
+    # 「oimo」と発言したら「おいも」が返る処理
+    if message.content in ['すみません','すみません！','すみません。','すみませんでした','ごめんなさい']:
+        await message.channel.send('謝罪をするな！')
+    elif message.content == '金子くん、それは謝ったほうがいいよ':
+        await message.channel.send('謝罪をしろ！')
+
+
+client.run(os.environ["DISCORD_TOKEN"])
