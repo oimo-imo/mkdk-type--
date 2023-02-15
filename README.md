@@ -1,27 +1,12 @@
----
-title: Discord Python bot
-description: A Discord bot written in Python
-tags:
-  - python
-  - discord.py
----
+# mkdk用Discord bot 「mkdk_type_α」
+「discord.py」を使用したDiscordbotです。
 
-# Discord.py Example
+# 機能
+｢すみません｣と入力すると謝罪を止めてくれます。
 
-This example starts a Discord bot using [discord.py](https://discordpy.readthedocs.io/en/stable/).
+# 開発環境
+discord.py 2.1.0 
+python3 3.8.10
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/PxM3nl)
-
-## ✨ Features
-
-- Python
-- Discord.py
-
-## 💁‍♀️ How to use
-
-- Install packages using `pip install -r requirements.txt`
-- Start the bot using `python main.py`
-
-## 📝 Notes
-
-This is a basic bot with the prefix `!`, more information can be founded at their [offical documentation](https://discordpy.readthedocs.io/en/stable/api.html).
+# つくってるひと
+おいも@亜寝帯 (https://s-oimo.hatenablog.com/)
