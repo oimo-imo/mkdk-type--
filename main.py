@@ -21,7 +21,7 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    # 「oimo」と発言したら「おいも」が返る処理
+    # 「すみません」と発言したら「謝罪するな」が返る処理
     if message.content in ['すみません','すみません！','すみません。','すみませんでした','ごめんなさい']:
         await message.channel.send('謝罪をするな！')
     elif message.content == '金子くん、それは謝ったほうがいいよ':
